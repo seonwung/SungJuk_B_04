@@ -1,0 +1,65 @@
+다음 UseCase Diagram을 기반으로 Class Diagram을 설계하시오.
+
+[UseCase Diagram]
+
+graph LR
+    Actor_Professor((교수))
+
+    subgraph "Sungjuk_B_04"
+        UC_Input[성적입력]
+        UC_Search[학점조회]
+        UC_Check[교수체크]
+    end
+
+    Actor_Professor --> UC_Input
+    Actor_Professor --> UC_Search
+
+    UC_Input -.<< include >>.-> UC_Check
+    UC_Search -.<< include >>.-> UC_Check
+
+
+[요구사항]
+
+교수는 성적입력을 한다.
+- 교수id, 학생id, 성적(자바, DB, 보안)을 입력한다.
+- 반드시 교수id를 체크한다.
+- 교수id는 "inha"이다.
+- 총점과 평균을 계산한다.
+
+교수는 학점조회를 한다.
+- 반드시 교수id를 체크한다.
+- 학점을 부여한다.
+  - A학점: 90점 이상
+  - B학점: 80점 이상
+  - C학점: 80점 미만
+
+
+[명칭 조건]
+
+모든 명칭은 한글로 작성한다.
+- Use Case명
+- 클래스명
+- 속성명
+- 행위명
+
+단, 데이터타입은 영문으로 작성한다.
+
+
+[Class Diagram 조건]
+
+클래스는 다음 4개만 사용한다.
+
+1. 교수
+   - 행위: 교수체크
+
+2. 성적
+   - 행위: 성적입력, 학점조회
+
+3. Add_Sungjuk_UI
+   - <<boundary>> 클래스
+
+4. Search_Sungjuk_UI
+   - <<boundary>> 클래스
+
+
+위 조건을 만족하는 Class Diagram을 Mermaid 코드로 작성하시오.
