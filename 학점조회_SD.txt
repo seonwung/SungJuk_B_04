@@ -1,0 +1,23 @@
+학점조회_SD
+sequenceDiagram
+    autonumber
+    actor ProfessorUser as 교수(사용자)
+    participant UI as Search_Sungjuk_UI
+    participant SJ as 성적
+    participant PROF as 교수
+
+    ProfessorUser->>+UI: 학점조회요청()
+    UI->>+SJ: 학점조회(교수id)
+    
+    SJ->>+PROF: 교수체크(교수id)
+    PROF-->>-SJ: boolean 결과
+    
+    alt 교수체크 성공 (true)
+        SJ->>SJ: 학점 부여 로직 실행
+        Note right of SJ: 90↑ A, 80↑ B, 80↓ C
+        SJ-->>UI: 학점 결과(String) 반환
+    else 교수체크 실패 (false)
+        SJ-->>-UI: 에러: 조회 권한이 없습니다.
+    end
+    
+    UI-->>-ProfessorUser: 학점 조회 결과 출력
