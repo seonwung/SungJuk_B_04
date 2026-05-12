@@ -1,3 +1,4 @@
+```mermaid
 성적 입력_SD
 sequenceDiagram
     autonumber
@@ -21,3 +22,4 @@ sequenceDiagram
     end
     
     UI-->>-ProfessorUser: 처리 결과 화면 출력
+```
