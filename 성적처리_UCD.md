@@ -1,3 +1,4 @@
+```mermaid
 graph LR
     Actor_Professor((교수))
 
@@ -12,3 +13,4 @@ graph LR
 
     UC_Input -.&lt;&lt; include &gt;&gt;.-> UC_Check
     UC_Search -.&lt;&lt; include &gt;&gt;.-> UC_Check
+```
