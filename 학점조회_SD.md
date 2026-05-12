@@ -1,3 +1,4 @@
+```mermaid
 학점조회_SD
 sequenceDiagram
     autonumber
@@ -21,3 +22,4 @@ sequenceDiagram
     end
     
     UI-->>-ProfessorUser: 학점 조회 결과 출력
+```
